@@ -2,6 +2,7 @@ overlay_0 = Ground Engine
 overlay_1 = Dungeon Engine
 overlay_2 = Some other Engine
 ================================
+'the mono', 'the loop' and the 'arm9 caller'
 
 overlay_1__02143d40 -> overlay_1__0214406c
 
@@ -21,4 +22,27 @@ When looking at the functions that the 'arm9 caller' calls, it's interesting to 
 This tells me that whatever's being done in these calls is pretty low level and probably not implicitly noticable in gameplay. Not to mention that they're probably being called 10
   times in a row in one go. 
 
+The overlay_2 equivilent to 'arm9 caller' look very similar. It's not just that functions in overlay_2 are calling the same stuff as 'arm9 caller'. Literally *a* single function is
+  calling the same stuff.
+overlay_0 has another similar looking function to 'arm9 caller'. There are minor differences between all three, but it seems they are roughly doing the same thing. Despite being from
+  different overlays.
+In fact upon further inspection, it seems as those there is at least one function in arm9.bin that is also doing all this shit. Talk about mission critical stuff.
+
+Target functions are:
+  0x0200178c -> returns
+  0x02002048 -> DAT_020ed4c0
+  0x02008a00 (with some bullshit as args) -> DAT_020f7d8c
+  0x02007200 -> Does a lot
+  0x02001fb0 -> DAT_020ed4c0, DAT_020ec504, some bizarre shit with a DAT_0700000??
+  0x02001e14 -> DAT_020ecd40, DAT_020e9fc4, some other func calls
+  0x02000e9c -> DAT_020ec100
+  0x02009be0 -> bunch of stuff
+  func_0x01ff86b8 (idk either)
+  0x020084d4 -> a lot of talking to the i/o registers. too many data regs to list here
+  0x020187c0  _DAT_0213420c _DAT_02134214 _DAT_02134210
+
+
+
 ===============================
+
+
