@@ -1,0 +1,24 @@
+overlay_0 = Ground Engine
+overlay_1 = Dungeon Engine
+overlay_2 = Some other Engine
+================================
+
+overlay_1__02143d40 -> overlay_1__0214406c
+
+This seems to be some sort of initialiser. The function get's called from two sources, one of which is overlay_1__0214406c.
+The purpose of overlay_1__0214406c is only to call overlay_1__02143d10.
+
+overlay_1__0214406c get's called all over the place, but I want to focus on it's calling from overlay_1__02143d10.
+
+We're going to call overlay_1__02143d40 'arm9 caller', due to it's numerous calls to functions in arm9.bin
+We're going to call overlay_1__0214406c 'the mono', due to it's singular purpose
+We're going to call overlay_1__02143d10 'the loop'.
+
+'the loop' is one of the most referenced functions in the whole of the Dungeon Engine, at 430.
+It's only purpose is to repeatedly call 'the mono', taking one int argument to determine how many iterations are done. I've seen a lot of 10's but it's not exclusively that amount.
+When looking at the functions that the 'arm9 caller' calls, it's interesting to note that those functions are also called by functions in the arm9.bin proper, as well as
+  overlay_0 and overlay_1. All the function calls 'arm9 caller' makes has at least one other overlay also call it. Most have all three.
+This tells me that whatever's being done in these calls is pretty low level and probably not implicitly noticable in gameplay. Not to mention that they're probably being called 10
+  times in a row in one go. 
+
+===============================

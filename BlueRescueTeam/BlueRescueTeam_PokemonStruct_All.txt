@@ -1,0 +1,264 @@
+as of RRT:
+
+OFFSET  | LENGTH  | DESCRIPTION
+========|=========|============
+0x00    | 0x04    | Pokemon species name pointer
+0x04    | 0x04    | Pokemon category name. E.g. Bulbasaur is "Seed Pokemon" and Charmander is "Lizard Pokemon". It's flavour text
+0x08    | 0x01    | Palette for overworld sprite. Can be 0x00 - 0x0c
+0x09    | 0x01    | Size. Can be 0x01 - 0x06, each increment increasing the number of tiles a pokemon takes up. In the game only values 0x01, 0x02 and 0x04 are used
+0x0A    | 0x03    | Nothing
+===============================
+0x0C    | 0x04    | Default movement speed. Little Endian value. Afaik Kecleon is the only pokemon to have it not be 0x01000000, or 1 step
+0x10    | 0x02    | Available dialogue sprites. Theorised to prevent crashes when the game tries to load a dialogue sprites for a pokemon that doesn't have any 
+0x12    | 0x01    | Nothing
+===============================
+0x13    | 0x01    | First pokemon type
+0x14    | 0x01    | Second pokemon type
+0x15    | 0x01    | Walkable tiles
+0x16    | 0x01    | Friend area
+0x17    | 0x01    | First ability
+0x18    | 0x01    | Second ability 
+0x19    | 0x01    | Shadow size. 0x00 = Small, 0x01 = Medium, 0x02 = Large
+0x1A    | 0x04    | Nothing
+===============================
+0x1E    | 0x02    | Base HP. Unsigned int, little endian
+0x20    | 0x02    | Base EXP. Unsigned int, little endian. Exp point formula in data_extra doc
+0x22    | 0x02    | Nothing
+===============================
+0x24    | 0x02    | Base Attack
+0x26    | 0x02    | Base Special Attack
+0x28    | 0x02    | Base Defense
+0x2A    | 0x02    | Base Special Defense
+0x2C    | 0x02    | Lowkick Damage Factor. Unsigned int, little endian directly proportional to the damage taken when hit with Low Kick
+0x2E    | 0x01    | Sizebust Orb Damage Amount. Unsigned int, little endian value indicating the HP damage taken when hit with the Sizebust Orb
+0x2F    | 0x05    | Nothing
+===============================
+0x34    | 0x02    | ID of pokemon that a pokemon evolves from. Values range from 0x0000 - 0x01A4
+0x36    | 0x02    | Evolution Type - see docs
+0x37    | 0x02    | Evolution requirement - see docs
+0x38    | 0x02    | Additional Evolution requirement - see docs
+0x3A    | 0x06    | Nothing
+===============================
+0x40    | 0x02    | Base recruit value
+0x42    | 0x06    | Nothing
+0x48    | 0x00    | End
+
+TYPES
+==============
+0x00    None
+0x01    Normal
+0x02    Fire
+0x03    Water
+0x04    Grass
+0x05    Electric
+0x06    Ice
+0x07    Fighting
+0x08    Poison
+0x09    Ground
+0x0A    Flying
+0x0B    Psychic
+0x0C    Bug
+0x0D    Rock
+0x0E    Ghost
+0x0F    Dragon
+0x10    Dark
+0x11    Steel
+
+None is placeholder type that isn't affected by any move type effectiveness
+
+WALKABLE TILES
+==============
+0x00    Ground
+0x01    Ground, Magma, Water
+0x02    Ground, Magma, Water, Sky
+0x03    Ground, Magma, Water, Sky, Wall;  if not the Team Leader, can follow invisible Pokémon
+0x04    Ground, Magma;                    won't get burn from magma even if the Pokémon isn't fire type
+0x05    Ground, Water
+
+FRIEND ZONE
+==============
+0x00    None
+0x01    Bountiful Sea
+0x02    Treasure Sea
+0x03    Serene Sea
+0x04    Deep-Sea Floor
+0x05    Deep-Sea Current
+0x06    Seafloor Cave
+0x07    Shallow Beach
+0x08    Mt. Deepgreen
+0x09    Mt. Cleft
+0x0A    Mt. Moonview
+0x0B    Rainbow Peak
+0x0C    Wild Plains
+0x0D    Beau Plains
+0x0E    Sky Blue Plains
+0x0F    Safari
+0x10    Scorched Plains
+0x11    Sacred Field
+0x12    Mist-Rise Forest
+0x13    Flyaway Forest
+0x14    Overgrown Forest
+0x15    Energetic Forest
+0x16    Mushroom Forest
+0x17    Healing Forest
+0x18    Transform Forest
+0x19    Secretive Forest
+0x1A    Rub-a-Dub River
+0x1B    Tadpole Pond
+0x1C    Turtleshell Pond
+0x1D    Mystic Lake
+0x1E    Waterfall Lake
+0x1F    Peanut Swamp
+0x20    Poison Swamp
+0x21    Echo Cave
+0x22    Cryptic Cave
+0x23    Dragon Cave
+0x24    Boulder Cave
+0x25    Jungle
+0x26    Decrepit Lab
+0x27    Mt. Discipline
+0x28    Thunder Meadow
+0x29    Power Plant
+0x2A    Crater
+0x2B    Furnace Desert
+0x2C    Aged Chamber AN
+0x2D    Aged Chamber O?
+0x2E    Ancient Relic
+0x2F    Darkness Ridge
+0x30    Frigid Cavern
+0x31    Ice Floe Beach
+0x32    Volcanic Pit
+0x33    Stratos Lookout
+0x34    Ravaged Field
+0x35    Magnetic Quarry
+0x36    Legendary Island
+0x37    Southern Island
+0x38    Enclosed Island
+0x39    Final Island
+
+ABILITIES
+==============
+0x00    -------
+0x01    Stench
+0x02    Thick Fat
+0x03    Rain Dish
+0x04    Drizzle
+0x05    Arena Trap
+0x06    Intimidate
+0x07    Rock Head
+0x08    Air Lock
+0x09    Hyper Cutter
+0x0A    Shadow Tag
+0x0B    Speed Boost
+0x0C    Battle Armor
+0x0D    Sturdy
+0x0E    Suction Cups
+0x0F    Clear Body
+0x10    Torrent
+0x11    Guts
+0x12    Rough Skin
+0x13    Shell Armor
+0x14    Natural Cure
+0x15    Damp
+0x16    Limber
+0x17    Magnet Pull
+0x18    White Smoke
+0x19    Synchronize
+0x1A    Overgrown
+0x1B    Swift Swim
+0x1C    Sand Stream
+0x1D    Sand Veil
+0x1E    Keen Eye
+0x1F    Inner Focus
+0x20    Static
+0x21    Shed Skin
+0x22    Huge Power
+0x23    Volt Absorb
+0x24    Water Absorb
+0x25    Forecast
+0x26    Serene Grace
+0x27    Poison Point
+0x28    Trace
+0x29    Oblivious
+0x2A    Truant
+0x2B    Run Away
+0x2C    Sticky Hold
+0x2D    Cloud Nine
+0x2E    Illuminate
+0x2F    Early Bird
+0x30    Hustle
+0x31    Drought
+0x32    Lightningrod
+0x33    Compoundeyes
+0x34    Marvel Scale
+0x35    Wonder Guard
+0x36    Insomnia
+0x37    Levitate
+0x38    Plus
+0x39    Pressure
+0x3A    Liquid Ooze
+0x3B    Color Change
+0x3C    Soundproof
+0x3D    Effect Spore
+0x3E    Flame Body
+0x3F    Minus
+0x40    Own Tempo
+0x41    Magma Armor
+0x42    Water Veil
+0x43    Swarm
+0x44    Cute Charm
+0x45    Immunity
+0x46    Blaze
+0x47    Pickup
+0x48    Flash Fire
+0x49    Vital Spirit
+0x4A    Chlorophyll
+0x4B    Pure Power
+0x4C    Shield Dust
+
+Ability "------" is a placeholder with no effect or in-game description
+
+BASE EXP FORMULA
+============
+
+Exp. Points = int((D+A)*C)
+D = int(A x (B - 1) / 10)
+where:
+A       Enemy Pokemon's base experience value
+B       Enemy Pokemon's Level
+C       0.5 if only hit with regular attacks
+C       1.0 if it was hit with a move and recieved at least 1HP of damage
+C       1.5 if it was hit with a linked move and recieved at least 1HP of damage
+
+
+EVOLUTION
+============
+
+Evolution Type:
+  0x00    Nothing
+  0x01    Level Requirement
+  0x02    IQ Requirement
+  0x03    Item requirement
+  0x13    Always zero
+
+Evolution Requirement:
+  for Type 0x01     Value of level required
+  for Type 0x02     Value of IQ required
+  for Type 0x03     ID of item required
+  
+  IQ requirements are stand-ins for evolution via high happiness in the core series
+
+Additional Evolution Requirements:
+
+  0x04    Need link cable (0x76)
+  0x05    Attack > Defense
+  0x06    Attack < Defense 
+  0x07    Attack = Defense 
+  0x08    Need sun ribbon (0x30)
+  0x09    Need lunar ribbon (0x31)
+  0x10    Need beauty scarf (0x2F)
+  0x11    Probability 50% - Heads
+  0x12    Probability 50% - Tails
+
+additional reqs 0x05, 0x06 & 0x07 I believe are for Hitmonlee, Hitmonchan & Hitmontop
+The probabilities I believe are for pokemon like Wurmple, who's evolution is chance based.

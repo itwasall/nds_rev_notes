@@ -1,0 +1,45 @@
+as of RRT:
+
+OFFSET  | LENGTH  | DESCRIPTION
+========|=========|============
+0x00    | 0x04    | Pokemon species name pointer
+0x04    | 0x04    | Pokemon category name. E.g. Bulbasaur is "Seed Pokemon" and Charmander is "Lizard Pokemon". It's flavour text
+0x08    | 0x01    | Palette for overworld sprite. Can be 0x00 - 0x0c
+0x09    | 0x01    | Size. Can be 0x01 - 0x06, each increment increasing the number of tiles a pokemon takes up. In the game only values 0x01, 0x02 and 0x04 are used
+0x0A    | 0x03    | Nothing
+===============================
+0x0C    | 0x04    | Default movement speed. Little Endian value. Afaik Kecleon is the only pokemon to have it not be 0x01000000, or 1 step
+0x10    | 0x02    | Available dialogue sprites. Theorised to prevent crashes when the game tries to load a dialogue sprites for a pokemon that doesn't have any 
+0x12    | 0x01    | Nothing
+===============================
+0x13    | 0x01    | First pokemon type
+0x14    | 0x01    | Second pokemon type
+0x15    | 0x01    | Walkable tiles
+0x16    | 0x01    | Friend area
+0x17    | 0x01    | First ability
+0x18    | 0x01    | Second ability 
+0x19    | 0x01    | Shadow size. 0x00 = Small, 0x01 = Medium, 0x02 = Large
+0x1A    | 0x04    | Nothing
+===============================
+0x1E    | 0x02    | Base HP. Unsigned int, little endian
+0x20    | 0x02    | Base EXP. Unsigned int, little endian. Exp point formula in data_extra doc
+0x22    | 0x02    | Nothing
+===============================
+0x24    | 0x02    | Base Attack
+0x26    | 0x02    | Base Special Attack
+0x28    | 0x02    | Base Defense
+0x2A    | 0x02    | Base Special Defense
+0x2C    | 0x02    | Lowkick Damage Factor. Unsigned int, little endian directly proportional to the damage taken when hit with Low Kick
+0x2E    | 0x01    | Sizebust Orb Damage Amount. Unsigned int, little endian value indicating the HP damage taken when hit with the Sizebust Orb
+0x2F    | 0x05    | Nothing
+===============================
+0x34    | 0x02    | ID of pokemon that a pokemon evolves from. Values range from 0x0000 - 0x01A4
+0x36    | 0x02    | Evolution Type - see docs
+0x37    | 0x02    | Evolution requirement - see docs
+0x38    | 0x02    | Additional Evolution requirement - see docs
+0x3A    | 0x06    | Nothing
+===============================
+0x40    | 0x02    | Base recruit value
+0x42    | 0x06    | Nothing
+0x48    | 0x00    | End
+

@@ -1,0 +1,242 @@
+The following are the memory address for items in storage. Changing these 2 byte values changes the number of items in storage. Issues arise when that value is above "0x03e7" or 999
+
+All addresses are 0x0213xxxx, where the last 4 hex values correspond to a different item
+
+bf36 - Stick
+bf38 - Iron Thorn
+bf3a - Silver Spike
+bf3c - Goblin Fang
+bf3e - Cacnea Spike
+bf40 - Corsola Twig
+bf42 - Gravelrock
+bf44 - Geopebble
+bf46 - Mobile Scarf
+bf48 - Heal Ribbon
+bf4a - Twist Band
+bf4c - Scope Lens
+bf4e - Patsy Band
+bf50 - No-Stick Cap
+bf52 - Pierce Band
+bf54 - Joy Ribbon
+bf56 - X-Ray Specs
+bf58 - Persim Band
+bf5a - Power Band
+bf5c - Pecha Scarf
+bf5e - Insominiscope
+bf60 - Warp Scarf
+bf62 - Tight Belt
+bf64 - Sneak Scarf
+bf66 - Gold Ribbon
+bf68 - Goggle Specs
+bf6a - Diet Ribbon
+bf6c - Trap Scarf
+bf6e - Racket Band
+bf70 - Def Scarf
+bf72 - Stamina Band
+bf74 - Plain Ribbon
+bf76 - Special Band
+bf78 - Zinc Band
+bf7a - Detect Band
+bf7c - Alert Specs
+bf7e - Dodge Scarf
+bf80 - Bounce Band
+bf82 - Curve Band
+bf84 - Whiff Scopes
+bf86 - No-Aim Scope
+bf88 - Lockon Specs
+bf8a - Munch Belt
+bf8c - Pass Scarf
+bf8e - Weather Band
+bf90 - Friend Bow
+bf92 - Beauty Scarf
+bf94 - Sun ribbon
+bf96 - Lunar Ribbon
+bf98 - Ring D
+bf9a - Ring E
+bf9c - Ring F
+bf9e - Heal Seed
+bfa0 - Wish Stone
+bfa2 - Oran Berry
+bfa4 - Sitrus Berry
+bfa6 - Eyedrop Seed
+bfa8 - Reviver seed
+bfaa - Blinker Seed
+bfac - Doom Seed
+bfae - Allure Seed
+bfb0 - Life Seed
+bfb2 - Rawst Berry
+bfb4 - Hunger Seed
+bfb6 - Quick Seed
+bfb8 - Pecha Berry
+bfba - Cheri Berry
+bfbc - Totter Seed
+bfbe - Sleep Seed
+bfc0 - Plain Seed
+bfc2 - Warp Seed
+bfc4 - Blast Seed
+bfc6 - Ginseng
+bfc8 - Joy Seeds
+bfca - Chesto Berry
+bfcc - Stun Seed
+bfce - Max Elixr
+bfd0 - Protein
+bfd2 - Calcium
+bfd4 - Iron
+bfd6 - Zinc
+bfd8 - Apple
+bfda - Big Apple
+bfde - Grimy Food
+bfde - Huge Apple
+bfe0 - White Gummi
+bfe2 - Red Gummi
+bfe4 - Blue Gummi
+bfe6 - Grass Gummi
+bfe8 - Yellow Gummi
+bfea - Clear Gummi
+bfec - Orange Gummi
+bfee - Pink Gummi
+bff0 - Brown Gummi
+bff2 - Sky Gummi
+bff4 - Gold Gummi
+bff6 - Green Gummi
+bff8 - Gray Gummi
+bffa - Purple Gummi
+bffc - Royal Gummi
+bffe - Black Gummi // 100
+c000 - Silver Gummi
+c002 - Banana
+c004 - Chestnut
+c008 - Upgrade
+c00a - King's Rock
+c00c - Thunderstone
+c00e - Deepseascale
+c010 - Deepseatooth
+c012 - Sun Stone
+c014 - Moon Stone
+c016 - Fire Stone
+c018 - Water Stone
+c01a - Metal Coat
+c01c - Leaf Stone
+c01e - Dragon Scale
+c020 - Link Cable
+c022 - Ice Part
+c024 - Steel Part
+c026 - Rock Part
+c028 - Music Box
+c02a - Key
+c02c - [NOTHING]
+c02e - Focus Punch
+c030 - Dragon Claw
+c032 - Water Pulse
+c034 - Calm Mind
+c036 - Roar
+c038 - Toxic
+c03a - Hail Orb
+c03c - Bulk Up
+c03e - Bullet Seed
+c040 - Hinder Power
+c042 - Sunny Orb
+c044 - Taunt
+c046 - Ice Beam
+c048 - Blizzard
+c04a - Hyper Beam
+c04c - Light Screen
+c04e - Protect
+c050 - Rainy Orb
+c052 - Giga Drain
+c054 - Safeguard
+c056 - Frustration
+c058 - Solar Beam
+c05a - Iron Tail
+c05c - Thunderbolt
+c05e - Thunder
+c060 - Earthquake
+c062 - Return
+c064 - Dig
+c066 - Psychic
+c068 - Shadow Ball
+c06a - Brick Break
+c06c - Evasion Orb
+c06e - Reflect
+c070 - Shockwave
+c072 - Flamethrower
+c074 - Slude Bomb
+c076 - Sandy Orb
+c078 - Fire Blast
+c07a - Rock Orb
+c07c - Aerial Ace
+c07e - Torment
+c080 - Facade
+c082 - Hidden Power
+c084 - Rest
+c086 - Attract
+c088 - Thief 
+c08a - Steel Wing
+c08c - Skill Swap
+c08e - Snatch Orb
+c090 - Overheat
+c092 - Wide Slash
+c094 - Excavate
+c096 - Spin Slash
+c098 - See-Trap Orb
+c09a - Mug Orb
+c09c - Rebound Orb
+c09e - Lob Orb
+c0a0 - Switcher Orb
+c0a2 - Blowback Orb
+c0a4 - Warp Orb
+c0a6 - Transfer Orb
+c0a8 - Slow Orb
+c0aa - Quick Orb
+c0ac - Luminous Orb
+c0ae - Petrify Orb
+c0b0 - Stayaway Orb
+c0b2 - Pounce Orb
+c0b4 - Trawl Orb
+c0b6 - Cleanse Orb
+c0b8 - Observer Orb
+c0ba - Decoy Orb
+c0bc - Slumber Orb
+c0be - Totter Orb
+c0c0 - Two-Edge Orb
+c0c2 - Silence Orb
+c0c4 - Escape Orb
+c0c6 - Scanner Orb
+c0c8 - Radar Orb
+c0ca - Drought Orb
+c0cc - Trapburst Orb
+c0ce - Roll Call
+c0d0 - Invisify Orb
+c0d2 - One-Shot Orb
+c0d4 - Identify Orb
+c0d6 - Vaccum-Cut
+c0d8 - Reviver Orb
+c0da - Shocker Orb
+c0dc - Sizeburst Orb
+c0de - One-Room Orb
+c0e0 - Fill-in Orb
+c0e2 - Trapper Orb
+c0e4 - Possess Orb
+c0e6 - Itemizer Orb
+c0e8 - Hurb Orb
+c0ea - Mobile Orb
+c0ec - Toss Orb
+c0ee - Stairs Orb
+c0f0 - Longtoss Orb
+c0f2 - Pierce Orb
+c0f4 - Cut
+c0f6 - Fly
+c0f8 - Surf
+c0fa - Strength
+c0fc - Flash
+c0fe - Rock Smash
+c100 - Waterfall
+c102 - Dive
+c104 - Link Box
+c106 - Switch Box
+c108 - Weavile Fig
+c10a - Mime Jr Fig
+c10c - Beatup Orb
+c10e - G Machine 6
+c110 - G Machine 7
+c112 - G Machine 8

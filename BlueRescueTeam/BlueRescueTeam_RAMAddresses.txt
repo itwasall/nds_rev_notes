@@ -1,0 +1,42 @@
+Stuff gleaned from the kind contributors over at gamehacking.org
+================================================================
+
+[DUN] = Dungeon Engine On
+
+All addresses here are for the US copy of Pokemon Mystery Dungeon: Blue Rescue Team
+
+RAM Address   |   What it do though
+=====================================
+ 0x211544C    | [DUN] Slot 1 pokemon total experience
+ 0x2115444    | [DUN] Slot 1 pokemon remaining health
+ 0x2115546    | [DUN] Stores current belly status
+ 0x213BF36    | Start of Items in Storage (2 Bytes)
+      C02C    |   - Mysterious 2 byte nothing
+      C112    |   - End of items in storge
+ 0x213C140    | Stores current number of rescue points
+
+
+      ITEMS IN STORAGE
+================================================================
+  You can store as many of a single item as you please in
+  Blue Rescue Team, or at least up to 999, as that's how much
+  screen real-estate is giving to displaying quantities of items
+  stored.
+  There's quite a lot of items in the game, a gummi for each
+  type of pokemon, 30 something orbs probably, a bunch of TMs,
+  a whole cornacopia of berries etc. so the game opts to allocate
+  a block of memory for recording the quantity of each item a player
+  has in their storage. 
+  4 Bytes of memory per item in fact. Starting from address
+  0x213B34, the next 952 bytes (238 items * 4 bytes) are used for
+  checking if the player has an item in storage, and how many of that
+  item. (sidenote I rewrote this line like 5 times flipflopping between how much and how many and Imma be real both sound really cumbersome to say aloud) 
+
+  This means one could open up the memory view in DesMuMe for example,
+  go to 0x213BF34, and just hold down `1` to begin overwriting all
+  storage data with "has 0x1111 of each item".
+
+  Alas in this case the games visual logic and game logic are working
+  in tandem, so if an item goes above 999 (3 being the maximum number
+  of digits used for displaying item quantities in the storage menu),
+  it'll wrap back around to 1.
