@@ -1,0 +1,33 @@
+THE POKEMON BLUE RAM FINDINGS
+
+
+0x213BF32
+
+On-Hand Money - 4 Bytes - 0x213c12c
+Bank Money 	  - 4 Bytes - 0x213c130
+Team Name 	  - 4 Bytes - 0x213c134
+Dungeon Settings 	    - 0x213c194
+
+If 0x4000131 == 00
+Write 0x213c130 == FF111111
+
+
+
+JUMP_SURPRISE_FUNC
+	0x20dc974
+INIT_PLAZA_SLEEP_FUNC
+	0x20dc9f4
+INIT_PLAZA_SLEEP_TALK_FUNC
+	0x20dbfe4
+INIT_SLEEP_FUNC
+	0x20dd5a4
+INIT_BASE_FUNC
+	0x20db1b8
+INIT_DEBUG_HABITAT
+	0x20dc054
+
+Odd value that flickers back and forth between 0 and 2. Setting it to 1 makes the value flicker back and forth between 1 and 3
+	0x2131a6c
+
+Contains actor name for current scene. 60 bytes long.	
+	0x2135490
