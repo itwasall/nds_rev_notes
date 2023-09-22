@@ -31,3 +31,36 @@ Odd value that flickers back and forth between 0 and 2. Setting it to 1 makes th
 
 Contains actor name for current scene. 60 bytes long.	
 	0x2135490
+
+
+When opening the job list:
+	address 0x020eb988 contains a pointer to 0x0213c940
+	changing this pointer to be random garbage corrupts the job menu in hilarious ways
+
+
+JOB LIST SHIT
+
+Upon opening 'Job List' menu in any capacity (mail box, bulletin board, char menu):
+0x020EAE74: 0x0211EE60
+0x020EAE78: 0x02113404
+0x020EAE88: 
+	If job list open: 0x021132E4
+	If bul boar open: 0x021134D8
+		(This remains true for the same job)
+0x0211338F: Changing value from 00 to not 00 simulates an 'A' button press on currently selected job
+
+0x0211341C: Pointer to current job info
+
+JOB INFO STRUCT:
+
+Apparently which dungeon a job is from changes its description. There might be some bizzare
+checksumming involved that calculates which response to give. 
+
+offset 0x00 - Dungeon ID - Also changes first line of desc
+offset 0x01 - Floor ID - Also changes second line of desc
+offset 0x08-0x09 - Client pokedex number
+offset 0x0a-0x0b - target pokedex number (for jobs like 'please return my friend!', where the pokemon listing the job isn't the pokemon that will appear in the dungeon related to the job)
+offset 0x0c - reward 1 ID
+offset 0x0d - reward 2 ID (when jobs have a "100 poke + ?" reward, this is the '?')
+offset 0x0e - Also reward related i guess I DONT GET IT
+
