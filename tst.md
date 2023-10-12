@@ -20,4 +20,5 @@ Assume:
     r10 -> 0x38
 
 `TST r0, #0x3F8` -> `Bitwise AND (0x1000, 0x3F8)` -> `0x0` -> `Z = 1` & `N = 0`
+
 `TEQEQ r10, r9` -> `If Z == 1` -> `Bitwise XOR (0x31, 0x38)` -> `0x09` -> `Z = 1` & `N = 0`
